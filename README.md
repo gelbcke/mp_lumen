@@ -23,7 +23,23 @@
 * `PUT` `{host}/api/vehicles/set_owner/{id}`  Define um novo usuário para o veículo
 * `PUT` `{host}/api/vehicles/release/{id}`  Remove a relação entre usário e veículo
 
-# install
+***
+# Tests
+## User
+* testShouldReturnAllUsers
+* testShouldReturnUsers
+* testShouldCreateUsers
+* testShouldUpdateUsers
+* testShouldDeleteUsers
+
+## Vehicles
+* testShouldReturnAllVehicles
+* testShouldReturnVehicle
+* testShouldCreateVehicle
+* testShouldUpdateVehicle
+* testShouldDeleteVehicle
+***
+# Install
 
 * `composer install`
 * `php artisan migrate`
