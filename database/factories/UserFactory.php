@@ -21,9 +21,12 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $hasher = app()->make('hash');
+
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
+            'password' => $hasher->make("secret")
         ];
     }
 }
