@@ -5,20 +5,26 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
 [![License](https://img.shields.io/packagist/l/laravel/lumen)](https://packagist.org/packages/laravel/lumen-framework)
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+# User routes
 
-## Official Documentation
+* `GET` `{host}/api/users` Lista todos usuários (com veículos, se houver relação)
+* `GET` `{host}/api/users/{id}` Lista detalhes do usuário
+* `POST` `{host}/api/users`  Cria um novo usuário
+* `PUT` `{host}/api/users/{id}`  Atualiza dados do usuário
+* `DELETE` `{host}/api/users/{id}` Deleta o usuário e realação com veículos, se houver
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+# Vehicle routes
 
-## Contributing
+* `GET` `{host}/api/vehicles` Lista todos os veículos (com usuário, se houver relação)
+* `GET` `{host}/api/vehicles/{id}` Lista detalhes do veículo
+* `POST` `{host}/api/vehicles`  Cria um novo veículo
+* `PUT` `{host}/api/vehicles/{id}`  Atualiza dados do veículo
+* `DELETE` `{host}/api/vehicles/{id}` Deleta o veículo
+* `PUT` `{host}/api/vehicles/set_owner/{id}`  Define um novo usuário para o veículo
+* `PUT` `{host}/api/vehicles/release/{id}`  Remove a relação entre usário e veículo
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# install
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* `composer install`
+* `php artisan migrate`
+* `php artisan db:seed`
