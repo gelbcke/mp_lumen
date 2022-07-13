@@ -18,8 +18,11 @@ return new class extends Migration
             $table->string('brand');
             $table->string('model');
             $table->string('plate')->unique();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('set null'); // Vehicle will be available to deploy on other user
             $table->timestamps();
         });
     }
